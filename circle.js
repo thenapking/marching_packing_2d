@@ -1,10 +1,12 @@
 NOISE_FACTOR = 100
 class Circle {
-    constructor(x, y, i) {
+    constructor(x, y, r, i, c) {
       this.acceleration = createVector(0, 0);
       this.velocity = p5.Vector.random2D();
       this.position = createVector(x, y);
-      this.radius = 10;
+      this.radius = r;
+      this.index = i;
+      this.connection = c
     }
   
     applyForce(force) {
@@ -18,6 +20,8 @@ class Circle {
     }
   
     display() {
+      noFill();
+      stroke(255);
       ellipse(this.position.x, this.position.y, this.radius, this.radius);
     }
 
